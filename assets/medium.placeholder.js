@@ -72,7 +72,20 @@ var mediumPlaceholder;
             }
             component.className = component.className + classes;
         };
-        img.setAttribute('src', component.getAttribute('data-src'));
+
+        var src = component.getAttribute('data-src');
+        var srcSet = component.getAttribute('data-srcset');
+        var sizes = component.getAttribute('data-sizes');
+
+        if (srcSet && srcSet.length > 0) {
+            img.setAttribute('srcset', srcSet)
+        }
+
+        if (sizes && sizes.length > 0) {
+            img.setAttribute('sizes', sizes)
+        }
+
+        img.setAttribute('src', src);
 
         component.insertBefore(img, component.lastChild);
         var _optimization = component.className;

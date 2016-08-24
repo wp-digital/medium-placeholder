@@ -247,13 +247,15 @@ class Medium_Placeholder_Generator {
         }
         $image_attributes = implode( '', $image_attributes );
 
-        $src = $attributes['src'];
-
-        if ( ! $src ) {
+        if ( empty ( $attributes['src'] ) ) {
             return $html;
         }
 
-        return "<span class=\"medium-placeholder\" data-src=\"{$src}\">
+        $src = $attributes['src'];
+        $srcSet = isset ( $attributes['srcset'] ) ? $attributes['srcset'] : '';
+        $attrSizes = isset ( $attributes['sizes'] ) ? $attributes['sizes'] : '';
+
+        return "<span class=\"medium-placeholder\" data-src=\"{$src}\" data-srcset=\"$srcSet\" data-sizes=\"$attrSizes\">
                 <span class=\"medium-placeholder-fill\" style='padding-bottom: $padding_bottom%'></span>
                 <img class=\"medium-placeholder-thumbnail\" onload=\"mediumPlaceholder(this)\" src=\"{$placeholder}\" $image_attributes >
                 <canvas class=\"medium-placeholder-canvas\" width=\"{$canvas_width}\" height=\"{$canvas_height}\"></canvas>
