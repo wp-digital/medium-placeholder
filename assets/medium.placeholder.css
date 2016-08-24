@@ -1,0 +1,61 @@
+.medium-placeholder {
+  position: relative;
+  display: block;
+}
+.medium-placeholder-fill {
+  display: block;
+}
+.medium-placeholder-thumbnail {
+  display: none;
+}
+.medium-placeholder-canvas {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: visibility 0s linear .5s, opacity .1s .3s;
+  transition: visibility 0s linear .5s, opacity .1s .3s;
+}
+.medium-no-transition .medium-placeholder-canvas {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.medium-placeholder-image {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0 none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  visibility: hidden;
+  -webkit-transition: visibility 0s linear 0s, opacity .4s 0s;
+  transition: visibility 0s linear 0s, opacity .4s 0s;
+}
+.medium-no-transition .medium-placeholder-image {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.medium-image-loaded .medium-placeholder-image {
+  opacity: 1;
+  visibility: visible;
+}
+.medium-image-loaded .medium-placeholder-canvas {
+  opacity: 0;
+  visibility: hidden;
+}
