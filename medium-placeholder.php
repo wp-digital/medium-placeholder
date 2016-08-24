@@ -66,7 +66,7 @@ function medium_placeholder_wp_print_styles_action() {
 
 add_action( 'wp_enqueue_scripts', 'medium_placeholder_wp_enqueue_scripts_action' );
 function medium_placeholder_wp_enqueue_scripts_action() {
-    wp_register_script( 'medium-placeholder', plugins_url( '/assets/medium.placeholder.js', __FILE__ ) );
+    wp_register_script( 'medium-placeholder', plugins_url( '/assets/medium.placeholder.min.js', __FILE__ ) );
     wp_enqueue_script( 'medium-placeholder' );
 }
 
