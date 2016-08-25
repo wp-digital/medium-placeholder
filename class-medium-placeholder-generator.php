@@ -94,7 +94,7 @@ class Medium_Placeholder_Generator {
             $image->setImageCompressionQuality( 20 );
             $image->setImageCompression( imagick::COMPRESSION_JPEG );
 
-        //    $image->thumbnailImage( 30, 0 );
+            $image->thumbnailImage( 30, 0 );
 
             $image->setImageFormat( 'jpeg' );
             $blob = $image->getImageBlob();
